@@ -12,7 +12,11 @@ app.set('views', path.resolve(__dirname, 'views'))
 app.get('/', (req, res) => {
     console.log(`Got a new request!`);
     // res.send(`Hello`)
-    res.render('home')
+    res.render('homePage', {user: 'Abe'})
+})
+
+app.get('/hobbies', (req, res) => {
+    res.render('hobbiesPage', {hobbies: ['coding', 'swimming'] })
 })
 
 app.listen(PORT, () => {
